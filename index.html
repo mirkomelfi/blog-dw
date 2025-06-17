@@ -8,16 +8,22 @@
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header class="header">
-    <div class="logo">Blog<span>Mirko</span></div>
-    <nav>
-      <ul class="nav-links">
-        <li><a href="#inicio">Inicio</a></li>
-        <li><a href="#articulos">Artículos</a></li>
-        <li><a href="#contacto">Contacto</a></li>
-      </ul>
-    </nav>
-  </header>
+<header class="header">
+  <div class="logo">Blog<span>Mirko</span></div>
+  <nav class="navbar">
+    <ul class="nav-links">
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#articulos">Artículos</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+</header>
+
 
   <section id="inicio" class="hero">
     <div class="hero-content">
@@ -137,6 +143,24 @@
   </footer>
 
   <a href="https://mirkomelfi.github.io/linktree-dw/" class="btn-flotante-linktree" title="Volver al Linktree">← Volver al Linktree</a>
+  
+<script>
+  const hamburger = document.getElementById("hamburger");
+  const navLinks = document.querySelector(".nav-links");
+
+  hamburger.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+  });
+
+  // Opcional: cerrar el menú al hacer click en un link (para UX mobile)
+  document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", () => {
+      navLinks.classList.remove("active");
+    });
+  });
+</script>
+
+
 
 </body>
 </html>
